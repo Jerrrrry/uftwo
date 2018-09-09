@@ -17,14 +17,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
      */
     $scope.addListing = function() {
       $scope.listings.push($scope.newlist);
-      $scope.newlist={'code':'','name':'','address':''};
+      $scope.newlist={'code':'','name':'','address':'',"coordinates": {
+          "latitude": '',
+          "longitude": ''
+      }};
     };
     $scope.deleteListing = function(list) {
       var index = $scope.listings.indexOf(list);
       $scope.listings.splice(index, 1);
     };
     $scope.showDetails = function(list) {
-      $scope.show=list
+      $scope.show=list;
     };
   }
 ]);
